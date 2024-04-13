@@ -26,15 +26,17 @@ class SplashScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-
+        if(onBoardingIsFinished()){
+            findNavController().navigate(R.id.action_splashScreenFragment_to_recipesFragment)
+        }else{
             findNavController().navigate(R.id.action_splashScreenFragment_to_viewPagerFragment)
+        }
 
         return inflater.inflate(R.layout.fragment_splash_screen, container, false)
     }
 
     private fun onBoardingIsFinished():Boolean{
-        val sharedPreferences = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        return sharedPreferences.getBoolean("finished",false)
+        val sharedPreferences = requireActivity().getSharedPreferences("onBoarding212", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("finishedaaa",false)
     }
 }

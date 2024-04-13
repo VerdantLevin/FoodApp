@@ -1,5 +1,7 @@
 package com.example.foody.ui
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment2
             )
         )
+//        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ffffff")))
+
         val navView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         navController.addOnDestinationChangedListener { _, nd: NavDestination, _ ->
             if (nd.id != R.id.viewPagerFragment && nd.id != R.id.splashScreenFragment ) {

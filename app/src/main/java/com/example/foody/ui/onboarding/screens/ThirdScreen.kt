@@ -20,17 +20,18 @@ class ThirdScreen : Fragment() {
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_third_screen, container, false)
 
-        val next = view.findViewById<TextView>(R.id.nextButton)
+        val next = view.findViewById<TextView>(R.id.nextButton3)
         next.setOnClickListener{
-            findNavController().navigate(R.id.action_viewPagerFragment_to_recipesBottomSheet)
             onBoardingIsFinished()
+            findNavController().navigate(R.id.action_viewPagerFragment_to_recipesBottomSheet)
+
         }
         return view
     }
     private fun onBoardingIsFinished(){
-        val sharedPreferences = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val sharedPreferences = requireActivity().getSharedPreferences("onBoarding212", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.putBoolean("finished",true)
+        editor.putBoolean("finishedaaa",true)
         editor.apply()
     }
 }
