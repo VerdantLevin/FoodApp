@@ -76,6 +76,9 @@ class FoodJokeFragment : Fragment() {
                 is NetworkResult.Loading -> {
                     Log.d("FoodJokeFragment", "Loading")
                 }
+                else -> {
+                    Log.d("FoodJokeFragment", "Loading")
+                }
             }
         }
 
