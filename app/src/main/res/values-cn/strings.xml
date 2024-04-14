@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">食品</string>
+    <string name="hello_blank_fragment">你好 空白片段</string>
+    <string name="recipes_fragment">食谱</string>
+    <string name="favorite_recipes_fragment">收藏夹</string>
+    <string name="food_joke_fragment">食品笑话</string>
+    <string name="default_web_client_id" translatable="false">605635408844-qp12bqm9vqerugi8mabkhqmada4u5s2h.apps.googleusercontent.com</string>
+    // 底部表
+    <string name="meal_type">餐类型</string>
+    <string name="main_course">主菜</string>
+    <string name="side_dish">配菜</string>
+    <string name="dessert">甜点</string>
+    <string name="appetizer">开胃菜</string>
+    <string name="salad">沙拉</string>
+    <string name="bread">面包</string>
+    <string name="breakfast">早餐</string>
+    <string name="soup">汤</string>
+    <string name="beverage">饮料</string>
+    <string name="sauce">酱汁</string>
+    <string name="marinade">腌料</string>
+    <string name="fingerfood">手指食品</string>
+    <string name="snack">小吃</string>
+    <string name="drink">饮料</string>
+    <string name="gluten_free">无麸质</string>
+    <string name="ketogenic">生酮</string>
+    <string name="vegetarian">素食</string>
+    <string name="vegan">纯素食</string>
+    <string name="pescetarian">素食者</string>
+    <string name="paleo">古食</string>
+    <string name="primal">原始</string>
+    <string name="whole30">整体 30</string>
+    <string name="diet_type">饮食类型</string>
+    <string name="apply">应用</string>
+    <string name="search">搜索</string>
+    <string name="cheap">廉价</string>
+    <string name="healthy">健康</string>
+    <string name="dairy_free">无乳制品</string>
+    <string name="save_to_favorites">保存到收藏夹</string>
+    <string name="no_favorite_recipes">没有收藏的食谱。</string>
+    <string name="delete_favorite_menu">删除收藏菜单</string>
+    <string name="delete_all">删除全部</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="share">分享</string>
+    <string name="profile">个人资料</string>
+    <string name="login">登录</string>
+    <string name="you_aren_t_log_in">您尚未登录</string>
+    <string name="sign_up">注册</string>
+    <string name="personal">个人</string>
+    <string name="notifications">通知</string>
+    <string name="dark_mode">夜间模式</string>
+    <string name="language">语言</string>
+    <string name="about_fooda">关于 Fooda</string>
+    <string name="help_center">帮助中心</string>
+    <string name="log_out">登出</string>
+</resources>

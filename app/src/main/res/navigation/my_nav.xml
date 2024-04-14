@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_profileFragment2_self"
             app:destination="@id/profileFragment2" />
+        <action
+            android:id="@+id/action_profileFragment2_to_languageSettingFragment"
+            app:destination="@id/languageSettingFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -145,4 +148,13 @@
             android:id="@+id/action_confirmSheetFragment_to_profileFragment2"
             app:destination="@id/profileFragment2" />
     </dialog>
+    <fragment
+        android:id="@+id/languageSettingFragment"
+        android:name="com.example.foody.ui.fragments.profile.LanguageSettingFragment"
+        android:label="Language"
+        tools:layout="@layout/fragment_language_setting" >
+        <action
+            android:id="@+id/action_languageSettingFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
 </navigation>

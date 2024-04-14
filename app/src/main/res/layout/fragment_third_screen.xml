@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="2"
+        android:textColor="@color/black"
         android:text="Welcome to Cooking Guide!"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -36,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:textColor="@color/black"
         android:text="Get ready to explore the world of cuisine with our app. Start your cooking journey now!"
         android:textAlignment="center"
 

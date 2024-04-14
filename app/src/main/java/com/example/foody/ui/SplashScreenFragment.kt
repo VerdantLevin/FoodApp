@@ -37,6 +37,7 @@ class SplashScreenFragment : Fragment() {
 
     private fun onBoardingIsFinished():Boolean{
         val sharedPreferences = requireActivity().getSharedPreferences("onBoarding212", Context.MODE_PRIVATE)
-        return sharedPreferences.getBoolean("finishedaaa",false)
+        return sharedPreferences.getBoolean("finisheda",false)
+
     }
 }

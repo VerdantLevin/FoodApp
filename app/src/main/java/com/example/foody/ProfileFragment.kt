@@ -15,6 +15,7 @@ import android.widget.ImageView
 import android.widget.Switch
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
@@ -77,7 +78,7 @@ class ProfileFragment : Fragment() {
             binding.textView8.visibility =View.GONE
             binding.textView7.visibility =View.GONE
             binding.textView9.visibility =View.GONE
-            binding.textView10.visibility =View.GONE
+            binding.textView10?.visibility =View.GONE
             binding.imageView10.visibility =View.GONE
             binding.imageView11.visibility =View.GONE
             binding.imageView12.visibility =View.GONE
@@ -96,21 +97,68 @@ class ProfileFragment : Fragment() {
 
         binding.textView5.setOnClickListener{
             binding.materialSwitch.isChecked=!binding.materialSwitch.isChecked
+
         }
         binding.imageView5.setOnClickListener{
             binding.materialSwitch.isChecked=!binding.materialSwitch.isChecked
         }
         binding.textView7.setOnClickListener{
             binding.materialSwitch2.isChecked=!binding.materialSwitch2.isChecked
+
+            val currentNightMode = if (binding.materialSwitch2.isChecked) true else false
+            when (currentNightMode) {
+                true -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
+                false -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+                else ->{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                }
+
+            }
+            uiModeChange(currentNightMode)
         }
         binding.imageView8.setOnClickListener{
+
             binding.materialSwitch2.isChecked=!binding.materialSwitch2.isChecked
+            val currentNightMode = if (binding.materialSwitch2.isChecked) true else false
+            when (currentNightMode) {
+                true -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
+                false -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+                else ->{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                }
+            }
+            uiModeChange(currentNightMode)
+        }
+
+
+
+        if(uiMode() && AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO){
+            AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO
+            binding.materialSwitch2.isChecked = false
+        }else if(uiMode()){
+            binding.materialSwitch2.isChecked = true
         }
         confirmViewModel = ViewModelProvider(this).get(ConfirmViewModel::class.java)
         binding.imageView15.setOnClickListener{
             ConfirmSheetFragment().show(parentFragmentManager,"newConfirmTag")
         }
-
+        binding.imageView9.setOnClickListener{
+            findNavController().navigate(R.id.action_profileFragment2_to_languageSettingFragment)
+        }
+        binding.textView8.setOnClickListener{
+            findNavController().navigate(R.id.action_profileFragment2_to_languageSettingFragment)
+        }
+        binding.imageView12.setOnClickListener{
+            findNavController().navigate(R.id.action_profileFragment2_to_languageSettingFragment)
+        }
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -120,6 +168,8 @@ class ProfileFragment : Fragment() {
         binding.ggButton.setOnClickListener {
             signInGoogle()
         }
+
+
         // Inflate the layout for this fragment
         binding.LoginButton.setOnClickListener{
             findNavController().navigate(R.id.action_profileFragment2_to_signInFragment)
@@ -176,5 +226,15 @@ class ProfileFragment : Fragment() {
     private fun LogOut():Boolean{
         val sharedPreferences = requireActivity().getSharedPreferences("LogOut", Context.MODE_PRIVATE)
         return sharedPreferences.getBoolean("Logout",false)
+    }
+    private fun uiMode():Boolean{
+        val sharedPreferences = requireActivity().getSharedPreferences("mode", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("modenight",false)
+    }
+    private fun uiModeChange(mode:Boolean){
+        val sharedPreferences = requireActivity().getSharedPreferences("mode", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("modenight",mode)
+        editor.apply()
     }
 }

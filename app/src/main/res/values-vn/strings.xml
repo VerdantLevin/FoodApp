@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Fooda</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="recipes_fragment">Công thức</string>
+    <string name="favorite_recipes_fragment">Yêu thích </string>
+    <string name="food_joke_fragment">Trò đùa</string>
+    <string name="default_web_client_id" translatable="false">605635408844-qp12bqm9vqerugi8mabkhqmada4u5s2h.apps.googleusercontent.com</string>
+
+    // Bottom Sheet
+    <string name="meal_type">Loại bữa ăn</string>
+    <string name="main_course">Món chính</string>
+    <string name="side_dish">Món phụ</string>
+    <string name="dessert">Món tráng miệng</string>
+    <string name="appetizer">Appetizer</string>
+    <string name="salad">Món khai vị</string>
+    <string name="bread">Bánh mỳ</string>
+    <string name="breakfast">Bữa sáng</string>
+    <string name="soup">Canh</string>
+    <string name="beverage">Đồ uống</string>
+    <string name="sauce">Nước xốt</string>
+    <string name="marinade">gia vị</string>
+    <string name="fingerfood">Thức ăn cầm tay</string>
+    <string name="snack">Đồ ăn vặt</string>
+    <string name="drink">Uống</string>
+    <string name="gluten_free">Không chứa gluten</string>
+    <string name="ketogenic">Ketogen</string>
+    <string name="vegetarian">Người ăn chay</string>
+    <string name="vegan">ăn chay</string>
+    <string name="pescetarian">người ăn chay</string>
+    <string name="paleo">Paleo</string>
+    <string name="primal">Primal</string>
+    <string name="whole30">Whole30</string>
+    <string name="diet_type">Loại chế độ ăn</string>
+    <string name="apply">Áp dụng</string>
+
+    <string name="search">Tìm kiếm</string>
+    <string name="cheap">Tiết kiệm</string>
+    <string name="healthy">Sức khỏe</string>
+    <string name="dairy_free">Không sử dụng sản phẩm từ sữa</string>
+    <string name="save_to_favorites">Lưu vào Mục yêu thích</string>
+    <string name="no_favorite_recipes">Không có công thức nấu ăn yêu thích.</string>
+    <string name="delete_favorite_menu">Xóa menu yêu thích</string>
+    <string name="delete_all">Xóa tất cả</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="share">Chia sẻ</string>
+    <string name="profile">Hồ sơ</string>
+    <string name="login">Đăng nhập</string>
+    <string name="you_aren_t_log_in">Bạn chưa đăng nhập</string>
+    <string name="sign_up">Đăng Ký</string>
+    <string name="personal">Cá Nhân</string>
+    <string name="notifications">Thông Báo</string>
+    <string name="dark_mode">Chế Độ Tối</string>
+    <string name="language">Ngôn Ngữ</string>
+    <string name="about_fooda">Về Fooda</string>
+    <string name="help_center">Trung Tâm Trợ Giúp</string>
+    <string name="log_out">Đăng Xuất</string>
+</resources>
