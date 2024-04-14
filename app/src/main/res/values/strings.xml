@@ -5,6 +5,7 @@
     <string name="recipes_fragment">Recipes</string>
     <string name="favorite_recipes_fragment">Favorites</string>
     <string name="food_joke_fragment">Food Joke</string>
+    <string name="default_web_client_id" translatable="false">605635408844-qp12bqm9vqerugi8mabkhqmada4u5s2h.apps.googleusercontent.com</string>
 
     // Bottom Sheet
     <string name="meal_type">Meal Type</string>
