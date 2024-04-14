@@ -17,10 +17,13 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.foody.databinding.FragmentProfileBinding
 import com.example.foody.databinding.FragmentRecipesBinding
+import com.example.foody.ui.fragments.profile.ConfirmSheetFragment
+import com.example.foody.ui.fragments.profile.ConfirmViewModel
 import com.example.foody.ui.fragments.recipes.RecipesFragmentArgs
 import com.example.foody.viewmodels.MainViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -36,7 +39,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 class ProfileFragment : Fragment() {
     private var dataRequested = false
     private val args by navArgs<RecipesFragmentArgs>()
-
+    private lateinit var confirmViewModel:ConfirmViewModel
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private lateinit var mainViewModel: MainViewModel
@@ -50,7 +53,8 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
-        if(currentUser!= null){
+
+        if(currentUser!= null ){
             binding.textView3.text=currentUser.email
 
             binding.materialSwitch.visibility= View.VISIBLE
@@ -89,10 +93,7 @@ class ProfileFragment : Fragment() {
             binding.imageView5.visibility = View.GONE
             binding.imageView6.visibility = View.GONE
         }
-        binding.imageView15.setOnClickListener{
-            signOut()
 
-        }
         binding.textView5.setOnClickListener{
             binding.materialSwitch.isChecked=!binding.materialSwitch.isChecked
         }
@@ -105,6 +106,11 @@ class ProfileFragment : Fragment() {
         binding.imageView8.setOnClickListener{
             binding.materialSwitch2.isChecked=!binding.materialSwitch2.isChecked
         }
+        confirmViewModel = ViewModelProvider(this).get(ConfirmViewModel::class.java)
+        binding.imageView15.setOnClickListener{
+            ConfirmSheetFragment().show(parentFragmentManager,"newConfirmTag")
+        }
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -155,7 +161,7 @@ class ProfileFragment : Fragment() {
             }
         }
     }
-    private fun signOut(){
+     private fun signOut(){
         auth!!.signOut()
         googleSignInClient.revokeAccess().addOnCompleteListener(activity as Activity) {
             // Google Sign In failed, update UI appropriately
@@ -166,5 +172,9 @@ class ProfileFragment : Fragment() {
     private fun onBoardingIsFinished():Boolean{
         val sharedPreferences = requireActivity().getSharedPreferences("Login", Context.MODE_PRIVATE)
         return sharedPreferences.getBoolean("",false)
+    }
+    private fun LogOut():Boolean{
+        val sharedPreferences = requireActivity().getSharedPreferences("LogOut", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("Logout",false)
     }
 }

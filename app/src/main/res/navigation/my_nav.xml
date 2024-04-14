@@ -136,4 +136,13 @@
             android:id="@+id/action_signUpFragment_to_signInFragment2"
             app:destination="@id/signInFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/confirmSheetFragment"
+        android:name="com.example.foody.ui.fragments.profile.ConfirmSheetFragment"
+        android:label="fragment_confirm_sheet"
+        tools:layout="@layout/fragment_confirm_sheet" >
+        <action
+            android:id="@+id/action_confirmSheetFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </dialog>
 </navigation>
